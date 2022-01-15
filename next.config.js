@@ -6,7 +6,7 @@ const directory_demo = process.env.NEXT_PUBLIC_API_ORIGIN_DEMO;
 const isProd = process.env.NODE_ENV == "production";
 const isDemo = process.env.NEXT_PUBLIC_ENVIRONMENT == "demo";
 
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
@@ -20,3 +20,5 @@ module.exports = {
     basePath: isProd ? (isDemo ? directory_demo : directory) : "",
   },
 };
+
+module.exports = nextConfig;

@@ -20,7 +20,7 @@ const point = (value) => {
 };
 
 const webp = (type) => {
-  return type?.endsWith("webp") && "image/webp";
+  return type.endsWith("webp") ? "image/webp" : null;
 };
 
 export const Source = (props) => {

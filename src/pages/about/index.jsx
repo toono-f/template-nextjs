@@ -12,7 +12,7 @@ const About = (props) => {
       </Head>
       <Header />
       <h1 className="text-center">title</h1>
-      <Picture class="mv-img" src="vercel.svg" alt="画像">
+      <Picture class="mv-img" src="assets/images/vercel.svg" alt="画像">
         <Source srcset="vercel.svg" media="md" />
       </Picture>
       <Footer />

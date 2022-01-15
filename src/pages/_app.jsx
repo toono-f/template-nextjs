@@ -6,7 +6,7 @@ const MyApp = ({ Component }) => {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/images/favicon.ico" />
       </Head>
       <Layout>
         <Component />
