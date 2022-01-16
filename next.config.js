@@ -6,6 +6,8 @@ const directory_demo = process.env.NEXT_PUBLIC_API_ORIGIN_DEMO;
 const isProd = process.env.NODE_ENV == "production";
 const isDemo = process.env.NEXT_PUBLIC_ENVIRONMENT == "demo";
 
+const { resolve } = require("path");
+
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
@@ -19,6 +21,51 @@ const nextConfig = {
   publicRuntimeConfig: {
     basePath: isProd ? (isDemo ? directory_demo : directory) : "",
   },
+  images: {
+    disableStaticImages: true, // next/imagesではなくnext-optimized-imagesを利用する場合 true
+    // 参考:https://exerror.com/nextjs-typeerror-unsupported-file-type-undefined-after-update-to-v-11/
+  },
+  webpack: (config) => {
+    config.resolve.alias["@public"] = resolve(__dirname, "public");
+    config.module.rules.push({
+      test: /(\.ttf|\.otf|\.woff|\.woff2)$/,
+      use: "raw-loader",
+    });
+    return config;
+  },
 };
 
-module.exports = nextConfig;
+const withPlugins = require("next-compose-plugins");
+const optimizedImages = require("next-optimized-images");
+module.exports = withPlugins(
+  [
+    [
+      optimizedImages,
+      {
+        optimizeImages: true,
+        optimizeImagesInDev: false,
+        removeOriginalExtension: true,
+        responsive: {
+          adapter: require("responsive-loader/sharp"),
+          // sizes: [640, 960, 1200, 1800],
+        },
+        mozjpeg: {
+          quality: 80,
+        },
+        optipng: {
+          optimizationLevel: 3,
+        },
+        pngquant: false,
+        gifsicle: {
+          interlaced: true,
+          optimizationLevel: 3,
+        },
+        webp: {
+          preset: "default",
+          quality: 75,
+        },
+      },
+    ],
+  ],
+  nextConfig,
+);

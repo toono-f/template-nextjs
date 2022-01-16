@@ -28,12 +28,21 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-tailwindcss": "^3.0.0-beta.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-optimized-images": "^2.6.2",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
     "prettier": "^2.5.1",
+    "raw-loader": "^4.0.2",
+    "responsive-loader": "^2.3.0",
     "sass": "^1.45.0",
     "serve": "^13.0.2",
-    "tailwind-config-viewer": "^1.6.3"
+    "sharp": "^0.29.3",
+    "tailwind-config-viewer": "^1.6.3",
+    "webp-loader": "^0.6.0"
   },
   "browserslist": [
     ">0.3%",

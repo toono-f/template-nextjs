@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { Footer } from "src/components/Footer";
 import { Header } from "src/components/Header";
 import { Picture } from "src/components/Picture";
@@ -11,10 +12,18 @@ const About = (props) => {
         <title>About</title>
       </Head>
       <Header />
-      <h1 className="text-center">title</h1>
-      <Picture class="mv-img" src="assets/images/vercel.svg" alt="画像">
-        <Source srcset="vercel.svg" media="md" />
-      </Picture>
+      <p className="flex justify-center">
+        <Picture src={require("@public/assets/images/sample02.jpg?resize&size=600&format=webp")} alt="こつこつとプログラムの改修を行うエンジニア">
+          <Source srcset={require("@public/assets/images/sample02.jpg?resize&size=300&format=webp")} media="sm" />
+          <Source srcset={require("@public/assets/images/sample02.jpg?resize&size=300")} media="sm" />
+          <Source srcset={require("@public/assets/images/sample02.jpg?resize&size=600")} />
+        </Picture>
+      </p>
+      <p className="mt-10 text-center">
+        <Link href="/">
+          <a className="underline">Top</a>
+        </Link>
+      </p>
       <Footer />
     </>
   );
