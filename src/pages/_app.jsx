@@ -6,11 +6,13 @@ const MyApp = ({ Component }) => {
   return (
     <>
       <Head>
-        <link rel="icon" href="/assets/images/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <Component />
       </Layout>
+      {/* <script src="/assets/js/jquery-3.6.0.min.js"></script> */}
+      {/* <script src="/assets/js/vendor.js"></script> */}
     </>
   );
 };
