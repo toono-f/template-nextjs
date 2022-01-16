@@ -22,9 +22,10 @@ const Index = (props) => {
       </p>
       <p className="mt-10 text-center">
         <Link href="/about/">
-          <a className={`${classes.link} mt-10 text-center font-bold underline link`}>About</a>
+          <a className={`${classes.link} mt-10 text-center font-bold underline link md:font-light`}>About</a>
         </Link>
       </p>
+      <p className={`mt-10`}>test</p>
       <Footer />
     </>
   );

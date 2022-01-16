@@ -1,11 +1,15 @@
+const em = (size, base = 16) => {
+  return size / base + "em";
+};
+
 module.exports = {
   content: ["src/**/*.{html,js,jsx}"],
   theme: {
     screens: {
-      sm: "480px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1366px",
+      sm: { max: em(480) },
+      md: { max: em(767) },
+      lg: { max: em(1024) },
+      xl: { max: em(1366) },
     },
     colors: {
       blue: "#1fb6ff",
