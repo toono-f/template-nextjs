@@ -19,12 +19,12 @@ const Index = (props) => {
           <Source srcset={require("@public/assets/images/sample.jpg?resize&size=600")} />
         </Picture>
       </p>
-      <Footer />
       <p className="mt-10 text-center">
         <Link href="/about/">
           <a className="underline">About</a>
         </Link>
       </p>
+      <Footer />
     </>
   );
 };
