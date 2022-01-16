@@ -4,6 +4,7 @@ import { Footer } from "src/components/Footer";
 import { Header } from "src/components/Header";
 import { Picture } from "src/components/Picture";
 import { Source } from "src/components/Source";
+import classes from "src/styles/index.module.scss";
 
 const Index = (props) => {
   return (
@@ -21,7 +22,7 @@ const Index = (props) => {
       </p>
       <p className="mt-10 text-center">
         <Link href="/about/">
-          <a className="underline">About</a>
+          <a className={`${classes.link} mt-10 text-center font-bold underline link`}>About</a>
         </Link>
       </p>
       <Footer />

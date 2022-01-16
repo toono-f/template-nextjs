@@ -1,0 +1,28 @@
+@use "sass:math";
+$base: 16; // 16px = 1rem
+// ==========================================================================
+// function
+// ==========================================================================
+@function sizeCalc($size) {
+  @return math.div($size, $base);
+}
+@function em($size) {
+  @return sizeCalc($size) + em;
+}
+@function rem($size) {
+  @return sizeCalc($size) + rem;
+}
+// ==========================================================================
+// breakpoint
+// ==========================================================================
+$breakpoints: (
+  "sm": em(480),
+  "md": em(767),
+  "lg": em(1024),
+  "xl": em(1366),
+);
+@mixin mq($size) {
+  @media screen and (max-width: #{map-get($breakpoints, $size)}) {
+    @content;
+  }
+}
