@@ -12,6 +12,9 @@ module.exports = {
       xl: { max: em(1366) },
     },
     colors: {
+      white: "#ffffff",
+      black: "#000000",
+      red: "#f32424",
       blue: "#1fb6ff",
       purple: "#7e5bef",
       pink: "#ff49db",
