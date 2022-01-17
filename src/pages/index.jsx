@@ -65,7 +65,7 @@ const Index = (props) => {
         })}
       </div>
       <div className="flex flex-col items-center mt-20">
-        <input className="border w-72" ref={inputElement} type="text" />
+        <input className="w-72 border" ref={inputElement} type="text" />
         <button onClick={doClick}>入力欄をフォーカスする</button>
       </div>
 
