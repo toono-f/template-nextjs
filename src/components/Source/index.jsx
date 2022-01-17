@@ -8,11 +8,13 @@ const breakpoint = {
 const point = (value) => {
   switch (value) {
     case "sm":
-      return `(max-width: ${breakpoint.sm - 1}px)`;
+      return `(max-width: ${breakpoint.sm}px)`;
     case "md":
-      return `(max-width: ${breakpoint.md - 1}px)`;
+      return `(max-width: ${breakpoint.md}px)`;
     case "lg":
-      return `(max-width: ${breakpoint.lg - 1}px)`;
+      return `(max-width: ${breakpoint.lg}px)`;
+    case "xl":
+      return `(max-width: ${breakpoint.xl}px)`;
     default:
       break;
   }
