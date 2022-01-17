@@ -58,7 +58,7 @@ const Index = (props) => {
       <div className="flex flex-wrap justify-center mt-20">
         {fruit.map((fruit) => {
           return (
-            <p className={`${fruit.style} text-red pr-5 pl-5`} key={fruit.name}>
+            <p className={`${fruit.style} pr-5 pl-5`} key={fruit.name}>
               {fruit.name}
             </p>
           );
