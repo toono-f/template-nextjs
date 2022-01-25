@@ -11,10 +11,11 @@ export const Picture = (props) => {
 // 画像を最適化しない場合
 // import { basePath } from "src/hooks/basePath";
 // export const Picture = (props) => {
+//   const path = basePath();
 //   return (
 //     <picture className={props.class}>
 //       {props.children}
-//       <img src={basePath() + `/${props.src}`} alt={props.alt} />
+//       <img src={`${path}/${props.src}`} alt={props.alt} />
 //     </picture>
 //   );
 // };

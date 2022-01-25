@@ -31,6 +31,7 @@ export const Source = (props) => {
 
 // 画像を最適化しない場合
 // import { basePath } from "src/hooks/basePath";
+// const path = basePath();
 // export const Source = (props) => {
-//   return <source srcSet={basePath() + `/${props.srcset}`} media={point(props.media)} type={webp(props.srcset)} />;
+//   return <source srcSet={`${path}/${props.srcset}`} media={point(props.media)} type={webp(props.srcset)} />;
 // };
