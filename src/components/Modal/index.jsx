@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import classes from "src/components/Modal/Modal.module.scss";
 
 export const Modal = (props) => {
   // youtubeの再生
@@ -36,18 +37,16 @@ export const Modal = (props) => {
   };
 
   return (
-    <div onClick={closeModal} className={`modal_movie ${movie !== 0 ? "is-open" : "is-close"}`}>
-      <div className={`modal_movie_box js-modal-box ${movie !== 0 ? "is-open" : "is-close"}`}>
+    <div onClick={closeModal} className={`${classes.modal} ${movie !== 0 ? classes.is_visible : classes.is_hidden}`}>
+      <div className={`js-modal-box ${classes.modal_box} ${movie !== 0 ? classes.is_visible : classes.is_hidden}`}>
         <button
           onClick={() => {
             setMovie(0);
           }}
           title="閉じる"
-          className="modal_movie_close"
-        >
-          <img src={require("@public/assets/images/common/close.svg")} alt="閉じる" width="20" height="20" />
-        </button>
-        <div className="modal_movie_main">
+          className={classes.modal_close}
+        ></button>
+        <div className={classes.modal_movie}>
           <iframe
             width="560"
             height="315"

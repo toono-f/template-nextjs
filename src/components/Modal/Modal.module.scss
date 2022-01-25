@@ -1,0 +1,121 @@
+@import "config/functions";
+@import "config/mixin";
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(#000, 0.5);
+  z-index: 101;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal_box {
+  max-width: 90%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  @include mq(md) {
+    max-width: 100%;
+    width: calc(100% - #{sp(15 * 2)});
+  }
+}
+
+.modal_close {
+  width: rem(60);
+  height: rem(60);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -100%);
+  z-index: 2;
+  @include flex($jc: center, $ai: center);
+  @include hover-opacity;
+  @include mq(md) {
+    width: sp(30);
+    height: sp(30);
+  }
+  &:before,
+  &:after {
+    @include size-rem(2, 30);
+    @include element($content: "", $d: block);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    @include mq(md) {
+      @include size-sp(1, 20);
+    }
+  }
+  &:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+.modal_movie {
+  position: relative;
+  width: rem(700);
+  overflow: hidden;
+  padding-top: calc(315 / 560 * 100%);
+  background-color: #000;
+  @include mq(md) {
+    width: 100%;
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:before {
+    @include element($content: "", $d: block);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border-radius: 100%;
+    animation-fill-mode: both;
+    border: rem(2) solid #fff;
+    border-bottom-color: transparent;
+    background: transparent !important;
+    display: inline-block;
+    animation: rotate 0.75s 0s linear infinite;
+    @include size-rem(50);
+    @include mq(lg) {
+      @include size-tb(50);
+    }
+    @include mq(md) {
+      @include size-sp(30);
+    }
+  }
+}
+
+.is_visible {
+  opacity: 1;
+  visibility: visible;
+}

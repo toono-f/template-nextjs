@@ -4,6 +4,12 @@ const em = (size, base = 16) => {
 
 module.exports = {
   content: ["src/**/*.{html,js,jsx}"],
+  purge: {
+    options: {
+      content: ["./src/**/*.html", "./public/**/*.html"],
+      whitelist: [],
+    },
+  },
   theme: {
     screens: {
       sm: { max: em(480) },
