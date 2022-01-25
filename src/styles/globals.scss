@@ -1,17 +1,28 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "variables";
 
+// config
+@import "config/functions";
+@import "config/mixin";
+
+// page
+@import "pages/common";
+
+// base
 @layer base {
   body {
-    // font-weight: normal;
-    // line-height: normal;
-    // color: theme("colors.black");
-    // letter-spacing: normal;
-    // font-size: rem(16);
+    // @include fs-all(12, 14);
+    color: theme("colors.default");
+    line-height: normal;
+    font-weight: normal;
+    letter-spacing: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    @include print {
+      zoom: 0.5;
+      -webkit-print-color-adjust: exact;
+    }
   }
   a[href^="tel:"] {
     cursor: default;
@@ -20,34 +31,18 @@
     appearance: none;
     outline: none;
     font: inherit;
-    cursor: pointer;
     background-color: transparent;
     border: none;
     box-shadow: none;
+    text-align: left;
   }
   img {
     image-rendering: -webkit-optimize-contrast; // Chromeでの画像ぼやけ防止
   }
 }
 
-@layer components {
-  .btn-link {
-    @apply bg-white text-black pl-0.5 pr-0.5 transition-colors;
-    border: 1px solid theme("colors.black");
-    &:hover {
-      @apply bg-black text-white;
-    }
-  }
-}
+// utilities
+@import "utils/others";
 
-@layer utilities {
-  .scroll-fade-in {
-    @apply opacity-0;
-    transition: opacity 0.5s ease;
-    &.is-active {
-      /*! purgecss start ignore */
-      @apply opacity-100;
-      /*! purgecss end ignore */
-    }
-  }
-}
+// components
+@import "components/others";

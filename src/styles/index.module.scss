@@ -1,14 +1,2 @@
-@import "variables";
-
-.link {
-  font-size: rem(24);
-  @include mq(lg) {
-    font-size: rem(20);
-  }
-  @include mq(md) {
-    font-size: rem(16);
-  }
-  @include mq(sm) {
-    font-size: rem(12);
-  }
-}
+@import "config/functions";
+@import "config/mixin";

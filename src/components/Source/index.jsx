@@ -26,7 +26,7 @@ const webp = (type) => {
 
 export const Source = (props) => {
   const { srcset, media } = props;
-  return <source srcSet={srcset} media={point(media)} type={webp(srcset.src)} />;
+  return <source srcSet={srcset} media={point(media)} type={webp(srcset.src || srcset)} />;
 };
 
 // 画像を最適化しない場合

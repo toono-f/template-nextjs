@@ -11,7 +11,7 @@ const { resolve } = require("path");
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
+    includePaths: [path.join(__dirname, "src/styles")],
     // 参考：https://zenn.dev/catnose99/scraps/5e3d51d75113d3
   },
   trailingSlash: true,

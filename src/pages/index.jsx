@@ -1,15 +1,16 @@
-import Head from "next/head";
-import Link from "next/link";
+import { NextSeo } from "next-seo";
 import { useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Footer } from "src/components/Footer";
 import { Header } from "src/components/Header";
 import { Picture } from "src/components/Picture";
 import { Source } from "src/components/Source";
-import classes from "src/styles/index.module.scss";
 
 const Index = (props) => {
   // object
+  const pageInfo = {
+    title: "TOP",
+  };
   const fruit = [
     {
       name: "apple",
@@ -43,11 +44,8 @@ const Index = (props) => {
 
   return (
     <>
-      <Head>
-        <title>Index</title>
-      </Head>
+      <NextSeo title={pageInfo.title} />
       <Header />
-
       <p className={`mt-10 text-center`}>
         <span className="block">{count}</span>
         <button className="mt-10 btn-link" onClick={() => setCount(count + 1)}>
@@ -68,7 +66,6 @@ const Index = (props) => {
         <input className="w-72 border" ref={inputElement} type="text" />
         <button onClick={doClick}>入力欄をフォーカスする</button>
       </div>
-
       <p className={`flex justify-center mt-96 scroll-fade-in ${inView ? "is-active" : "is-passive"}`} ref={ref}>
         <Picture src={require("@public/assets/images/sample.jpg?resize&size=600&format=webp")} alt="ギターとアンプと彼女" lazy>
           <Source srcset={require("@public/assets/images/sample.jpg?resize&size=300&format=webp")} media="sm" />
@@ -76,12 +73,6 @@ const Index = (props) => {
           <Source srcset={require("@public/assets/images/sample.jpg?resize&size=600")} />
         </Picture>
       </p>
-      <p className="mt-10 text-center">
-        <Link href="/about/">
-          <a className={`${classes.link} mt-10 text-center font-bold underline link md:font-light`}>About</a>
-        </Link>
-      </p>
-      <div style={{ height: "300px" }}></div>
       <Footer />
     </>
   );

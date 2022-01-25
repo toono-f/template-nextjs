@@ -1,0 +1,116 @@
+// ==========================================================================
+// breakpoint
+// ==========================================================================
+$breakpoints: (
+  "sm": em(480),
+  "md": em(767),
+  "lg": em(1024),
+  "xl": em(1366),
+);
+@mixin mq($size: "md") {
+  @media screen and (max-width: #{map-get($breakpoints, $size)}) {
+    @content;
+  }
+}
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+@mixin hover {
+  &:hover {
+    @media screen and (min-width: em(896 + 1)) and (hover: hover) {
+      @content;
+    }
+  }
+}
+// ==========================================================================
+// hover
+// ==========================================================================
+@mixin hover-opacity {
+  @media screen and (min-width: em(896 + 1)) and (hover: hover) {
+    cursor: pointer;
+    transition: opacity 0.5s;
+  }
+  @include hover {
+    opacity: 0.7;
+  }
+}
+// ==========================================================================
+// size
+// ==========================================================================
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+@mixin size-rem($w, $h: $w) {
+  width: rem($w);
+  height: rem($h);
+}
+@mixin size-tb($w, $h: $w) {
+  width: tb($w);
+  height: tb($h);
+}
+@mixin size-sp($w, $h: $w) {
+  width: sp($w);
+  height: sp($h);
+}
+// ==========================================================================
+// content
+// ==========================================================================
+@mixin element($content: "", $d: block) {
+  display: $d;
+  content: $content;
+}
+// ==========================================================================
+// flex
+// ==========================================================================
+@mixin flex($jc: null, $ai: null, $w: null, $d: null) {
+  display: flex;
+  flex-direction: $d;
+  flex-wrap: $w;
+  align-items: $ai;
+  justify-content: $jc;
+}
+@mixin inline-flex($jc: null, $ai: null, $w: null, $d: null) {
+  display: inline-flex;
+  flex-direction: $d;
+  flex-wrap: $w;
+  align-items: $ai;
+  justify-content: $jc;
+}
+// ==========================================================================
+// font-size
+// ==========================================================================
+@mixin fs-all($sp: null, $pc: null) {
+  @if ($pc) {
+    font-size: rem($pc);
+    @include mq(lg) {
+      font-size: tb($pc);
+    }
+  } @else {
+    font-size: rem($sp);
+    @include mq(lg) {
+      font-size: tb($sp);
+    }
+  }
+  @if ($sp) {
+    @include mq(md) {
+      font-size: sp($sp);
+    }
+  }
+}
+// ==========================================================================
+// img
+// ==========================================================================
+@mixin img-cover($obj: contain, $po: relative) {
+  position: $po;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: $obj;
+  }
+}

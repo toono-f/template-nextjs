@@ -12,6 +12,7 @@ module.exports = {
       xl: { max: em(1366) },
     },
     colors: {
+      default: "#222222",
       white: "#ffffff",
       black: "#000000",
       red: "#f32424",
@@ -24,10 +25,14 @@ module.exports = {
       gray: "#8492a6",
     },
     fontFamily: {
-      sans: ["Graphik", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+      sans: ["Noto Sans JP", "sans-serif"],
+      // serif: ["Noto Serif JP", "serif"],
     },
-    extend: {},
+    extend: {
+      screens: {
+        print: { raw: "print" },
+      },
+    },
   },
   plugins: [
     require("./plugins/tailwind-vw-calc.js")({
