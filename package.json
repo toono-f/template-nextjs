@@ -7,9 +7,9 @@
     "start": "next start",
     "lint": "next lint",
     "fix:lint": "next lint --fix",
-    "export": "next build && next export",
-    "serve": "yarn export && serve ./out",
-    "export-demo": "NEXT_PUBLIC_ENVIRONMENT=demo next build && next export",
+    "export": "next build && next export -o out",
+    "serve": "yarn export -o out && serve ./out",
+    "export-demo": "NEXT_PUBLIC_ENVIRONMENT=demo next build && next export -o out_demo",
     "tailwind-config-viewer": "tailwind-config-viewer -o"
   },
   "dependencies": {
