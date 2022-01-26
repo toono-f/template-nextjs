@@ -7,7 +7,7 @@ export const Modal = (props) => {
 
   useEffect(() => {
     setMovie(props.id);
-  }, [props.update]);
+  }, [props.update, props.id]);
 
   const movieUrl = (id, time = 0) => {
     const opts = {
