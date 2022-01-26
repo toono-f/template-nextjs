@@ -1,5 +1,4 @@
 @layer utilities {
-  /*! purgecss start ignore */
   .link_off {
     opacity: 0.7;
     pointer-events: none;
@@ -36,5 +35,4 @@
     transform: translateY(0);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-  /*! purgecss end ignore */
 }
