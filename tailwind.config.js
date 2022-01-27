@@ -5,12 +5,6 @@ const em = (size, base = 16) => {
 module.exports = {
   content: ["src/**/*.{html,js,jsx}"],
   theme: {
-    screens: {
-      sm: { max: em(480) },
-      md: { max: em(767) },
-      lg: { max: em(1024) },
-      xl: { max: em(1366) },
-    },
     colors: {
       default: "#222222",
       white: "#ffffff",
@@ -30,6 +24,10 @@ module.exports = {
     },
     extend: {
       screens: {
+        xl: { raw: `all and (max-width: ${em(1920)})` },
+        lg: { raw: `all and (max-width: ${em(1440)})` },
+        md: { raw: `only screen and (max-width: ${em(896)})` },
+        sm: { raw: `only screen and (max-width: ${em(480)})` },
         print: { raw: "print" },
       },
     },
