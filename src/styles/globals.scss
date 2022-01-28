@@ -9,13 +9,19 @@
 // page
 @import "pages/common";
 
+// utilities
+@import "utils/others";
+
+// components
+@import "components/others";
+
 // base
 @layer base {
   body {
+    font-weight: normal;
+    line-height: normal;
     // @include fs-all(12, 14);
     color: theme("colors.default");
-    line-height: normal;
-    font-weight: normal;
     letter-spacing: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -28,21 +34,15 @@
     cursor: default;
   }
   button {
-    appearance: none;
-    outline: none;
     font: inherit;
+    text-align: left;
     background-color: transparent;
     border: none;
+    outline: none;
     box-shadow: none;
-    text-align: left;
+    appearance: none;
   }
   img {
     image-rendering: -webkit-optimize-contrast; // Chromeでの画像ぼやけ防止
   }
 }
-
-// utilities
-@import "utils/others";
-
-// components
-@import "components/others";

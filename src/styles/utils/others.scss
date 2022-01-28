@@ -1,7 +1,7 @@
 @layer utilities {
   .link_off {
-    opacity: 0.7;
     pointer-events: none;
+    opacity: 0.7;
   }
   // SPのみ表示/非表示
   .sp_hidden {
@@ -32,7 +32,7 @@
   }
   .scroll_up {
     opacity: 1;
-    transform: translateY(0);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(0);
   }
 }

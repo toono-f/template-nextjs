@@ -6,7 +6,7 @@ export default function Custom404() {
   return (
     <>
       <Header />
-      <main className="text-center p-4 pb-20 pt-20">
+      <main className="p-4 pt-20 pb-20 text-center">
         <h1 className="font-bold">404 ご指定のページが見つかりませんでした。</h1>
         <p className="mt-6">
           アクセスしようとしたページは削除、変更されたか、
