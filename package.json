@@ -10,6 +10,7 @@
     "export": "next build && next export -o out",
     "serve": "yarn export -o out && serve ./out",
     "export-demo": "NEXT_PUBLIC_ENVIRONMENT=demo next build && next export -o out_demo",
+    "export-all": "NEXT_PUBLIC_ENVIRONMENT=demo next build && next export -o out_demo && next build && next export -o out",
     "tailwind-config-viewer": "tailwind-config-viewer -o"
   },
   "dependencies": {
