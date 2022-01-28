@@ -11,7 +11,9 @@
     "serve": "yarn export -o out && serve ./out",
     "export-demo": "NEXT_PUBLIC_ENVIRONMENT=demo next build && next export -o out_demo",
     "export-all": "NEXT_PUBLIC_ENVIRONMENT=demo next build && next export -o out_demo && next build && next export -o out",
-    "tailwind-config-viewer": "tailwind-config-viewer -o"
+    "tailwind-config-viewer": "tailwind-config-viewer -o",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "fix:css": "stylelint --fix \"src/**/*.scss\""
   },
   "dependencies": {
     "next": "12.0.4",
@@ -44,6 +46,12 @@
     "sass": "^1.45.0",
     "serve": "^13.0.2",
     "sharp": "^0.29.3",
+    "stylelint": "^14.3.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended-scss": "^5.0.2",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.1.0",
     "tailwind-config-viewer": "^1.6.3",
     "webp-loader": "^0.6.0"
   },
