@@ -13,7 +13,8 @@
     "export-all": "NEXT_PUBLIC_ENVIRONMENT=demo next build && next export -o out_demo && next build && next export -o out",
     "tailwind-config-viewer": "tailwind-config-viewer -o",
     "lint:css": "stylelint \"src/**/*.scss\"",
-    "fix:css": "stylelint --fix \"src/**/*.scss\""
+    "fix:css": "stylelint --fix \"src/**/*.scss\"",
+    "validate": "w3c-html-validator out/**/ out/*.html"
   },
   "dependencies": {
     "next": "12.0.4",
@@ -53,7 +54,8 @@
     "stylelint-prettier": "^2.0.0",
     "stylelint-scss": "^4.1.0",
     "tailwind-config-viewer": "^1.6.3",
-    "webp-loader": "^0.6.0"
+    "webp-loader": "^0.6.0",
+    "w3c-html-validator": "^1.0.1"
   },
   "browserslist": [
     ">0.3%",
