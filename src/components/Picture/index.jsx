@@ -1,9 +1,9 @@
 export const Picture = (props) => {
-  const { className, children, src, alt = "", width = src.width, height = src.height, decoding = "async", lazy } = props;
+  const { className, children, src, alt = "", width = src.width, height = src.height, decoding = "async", loading } = props;
   return (
     <picture className={className}>
       {children}
-      <img src={src} alt={alt} width={width} height={height} decoding={decoding} loading={lazy && "lazy"} />
+      <img src={src} alt={alt} width={width} height={height} decoding={decoding} loading={loading} />
     </picture>
   );
 };
