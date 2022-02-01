@@ -33,7 +33,7 @@
     "eslint-config-next": "12.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-tailwindcss": "^3.0.0-beta.1",
+    "eslint-plugin-tailwindcss": "^3.4.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
@@ -54,8 +54,8 @@
     "stylelint-prettier": "^2.0.0",
     "stylelint-scss": "^4.1.0",
     "tailwind-config-viewer": "^1.6.3",
-    "webp-loader": "^0.6.0",
-    "w3c-html-validator": "^1.0.1"
+    "w3c-html-validator": "^1.0.1",
+    "webp-loader": "^0.6.0"
   },
   "browserslist": [
     ">0.3%",
