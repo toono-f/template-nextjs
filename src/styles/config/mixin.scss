@@ -114,3 +114,45 @@ $breakpoints: (
     object-fit: $obj;
   }
 }
+// ==========================================================================
+// position
+// ==========================================================================
+@mixin absolute($t: null, $r: null, $b: null, $l: null, $z: null) {
+  position: absolute;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+  z-index: $z;
+}
+@mixin absolute-wide($z: null) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z;
+}
+// ==========================================================================
+// center
+// ==========================================================================
+@mixin center($t: 50%, $b: -50%, $l: 50%, $r: -50%) {
+  position: absolute;
+  top: $t;
+  left: $l;
+  transform: translate($r, $b);
+}
+@mixin center-x($position: absolute, $t: null, $b: null) {
+  position: $position;
+  top: $t;
+  bottom: $b;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin center-y($position: absolute, $r: null, $l: null) {
+  position: $position;
+  top: 50%;
+  right: $r;
+  left: $l;
+  transform: translateY(-50%);
+}

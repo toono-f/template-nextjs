@@ -18,7 +18,6 @@ const MyApp = ({ Component }) => {
     description: "",
     url: "",
     type: type,
-    context: "",
   };
 
   return (
@@ -35,17 +34,15 @@ const MyApp = ({ Component }) => {
         }}
       />
       <Head>
-        <meta name="apple-mobile-web-app-title" content={siteInfo.context} />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <link rel="shortcut icon" href="" />
-        <link rel="apple-touch-icon" href="" />
+        {/* <link rel="shortcut icon" href="" /> */}
+        {/* <link rel="apple-touch-icon" href="" /> */}
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
       </Head>
       <Layout>
         <Component />
       </Layout>
-      {/* <script src="/assets/js/jquery-3.6.0.min.js"></script> */}
-      {/* <script src="/assets/js/vendor.js"></script> */}
     </>
   );
 };

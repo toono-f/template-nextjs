@@ -30,3 +30,7 @@ const Sitemap = (props) => {
 };
 
 export default Sitemap;
+
+// export const config = {
+//   unstable_runtimeJS: false,
+// };

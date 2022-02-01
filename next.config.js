@@ -10,6 +10,7 @@ const { resolve } = require("path");
 
 const nextConfig = {
   reactStrictMode: true,
+  optimizeFonts: false, // フォントを最適化無効
   sassOptions: {
     includePaths: [path.join(__dirname, "src/styles")],
     // 参考：https://zenn.dev/catnose99/scraps/5e3d51d75113d3
@@ -33,6 +34,9 @@ const nextConfig = {
     });
     return config;
   },
+  // generateBuildId: async () => {
+  //   return "";
+  // },
 };
 
 const withPlugins = require("next-compose-plugins");

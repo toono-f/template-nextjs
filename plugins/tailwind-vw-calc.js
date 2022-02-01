@@ -9,7 +9,16 @@ const dynamicSpacing = plugin.withOptions(
   },
   (options) => {
     const spacing = () => {
-      const sizes = [...(options?.sizes ?? Object.keys(require("tailwindcss/defaultTheme").spacing)), ...(options?.extend?.sizes ?? [])]
+      // const sizes = [...(options?.sizes ?? Object.keys(require("tailwindcss/defaultTheme").spacing)), ...(options?.extend?.sizes ?? [])]
+      const sizes = [
+        ...(options?.sizes ??
+          Object.keys(
+            [...Array(100 + 1)].reduce((object, _, index) => {
+              object[`${index}`] = `${index / 16}rem`;
+              return object;
+            }, {}),
+          )),
+      ]
         .filter((size) => Number(size) !== 0 && !isNaN(size))
         .map((size) => `${size}`);
 
@@ -60,6 +69,7 @@ const dynamicSpacing = plugin.withOptions(
       theme: {
         extend: {
           spacing: spacing(),
+          // fontSize: spacing(),
         },
       },
     };

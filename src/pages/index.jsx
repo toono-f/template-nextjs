@@ -2,6 +2,7 @@ import { NextSeo } from "next-seo";
 import { useState } from "react";
 import { Footer } from "src/components/Footer";
 import { Header } from "src/components/Header";
+import { Modal } from "src/components/Modal";
 
 const Index = (props) => {
   // meta
@@ -21,18 +22,24 @@ const Index = (props) => {
     <>
       <NextSeo title={pageInfo.title} />
       <Header />
-      {/* <Modal id={movie} update={update} />
-      <button
-        title="Youtubeを見る"
-        onClick={() => {
-          movieUpdate("j1hft9Wjq9U");
-        }}
-      >
-        <span>Youtubeを見る</span>
-      </button> */}
+      <Modal id={movie} update={update} />
+      <div className="text-center p-20">
+        <button
+          title="Youtubeを見る"
+          onClick={() => {
+            movieUpdate("j1hft9Wjq9U");
+          }}
+        >
+          <span>Youtubeを見る</span>
+        </button>
+      </div>
       <Footer />
     </>
   );
 };
 
 export default Index;
+
+// export const config = {
+//   unstable_runtimeJS: false,
+// };
