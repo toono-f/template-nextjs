@@ -1,10 +1,6 @@
 const path = require("path");
 
-const directory = process.env.NEXT_PUBLIC_API_ORIGIN;
-const directory_demo = process.env.NEXT_PUBLIC_API_ORIGIN_DEMO;
-
-const isProd = process.env.NODE_ENV == "production";
-const isDemo = process.env.NEXT_PUBLIC_ENVIRONMENT == "demo";
+const environment = process.env.NODE_ENV == "production" ? (process.env.NEXT_PUBLIC_ENVIRONMENT == "development" ? process.env.NEXT_PUBLIC_API_ORIGIN_DEV : process.env.NEXT_PUBLIC_API_ORIGIN) : "";
 
 const { resolve } = require("path");
 
@@ -17,10 +13,10 @@ const nextConfig = {
   },
   trailingSlash: true,
   // 参考：https://blog.kimizuka.org/entry/2021/01/16/203050
-  basePath: isProd ? (isDemo ? directory_demo : directory) : "",
-  assetPrefix: isProd ? (isDemo ? directory_demo : directory) : "",
+  basePath: environment,
+  assetPrefix: environment,
   publicRuntimeConfig: {
-    basePath: isProd ? (isDemo ? directory_demo : directory) : "",
+    basePath: environment,
   },
   images: {
     disableStaticImages: true, // next/imagesではなくnext-optimized-imagesを利用する場合 true

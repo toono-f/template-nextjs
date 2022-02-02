@@ -13,7 +13,7 @@ const Sitemap = (props) => {
     <>
       <NextSeo title={pageInfo.title} />
       <Header />
-      <main className="pt-14 pb-14">
+      <main className="py-14">
         <ul className="text-center">
           <li>
             <Link href="/">

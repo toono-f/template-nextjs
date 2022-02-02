@@ -5,7 +5,7 @@
   "editor.formatOnSave": true,
   // ファイル保存時、ESLint による自動フォーマット
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll": true
   },
   // jsファイルでもEmmetを有効化
   "emmet.triggerExpansionOnTab": true,

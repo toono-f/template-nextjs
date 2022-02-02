@@ -14,8 +14,8 @@ const MyApp = ({ Component }) => {
   const router = useRouter();
   const type = router.pathname === "/" ? "website" : "article";
   const siteInfo = {
-    title: "",
-    description: "",
+    title: "テンプレート",
+    description: "こちらはテンプレートです。",
     url: "",
     type: type,
   };

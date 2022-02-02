@@ -6,9 +6,6 @@
 @import "config/functions";
 @import "config/mixin";
 
-// page
-@import "pages/common";
-
 // utilities
 @import "utils/others";
 
@@ -26,9 +23,6 @@
     line-height: normal;
     color: theme("colors.default");
     letter-spacing: normal;
-    // テキスト自動拡大アルゴリズムを有効化
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
     // アンチエイリアスを調節（mac）
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -57,4 +51,6 @@
   img {
     image-rendering: -webkit-optimize-contrast; // Chromeでの画像ぼやけ防止
   }
+  // pages
+  @import "pages/common";
 }

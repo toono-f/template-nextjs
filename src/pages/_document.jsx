@@ -1,7 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
-// import { basePath } from "src/hooks/basePath";
-
-// const path = basePath();
+import { basePath } from "src/hooks/basePath";
 class MyDocument extends Document {
   render() {
     return (
@@ -13,8 +11,8 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* <script src={`${path}/assets/js/jquery-3.6.0.min.js`}></script> */}
-          {/* <script src={`${path}/assets/js/vendor.js`}></script> */}
+          <script src={`${basePath}/assets/js/jquery-3.6.0.min.js`}></script>
+          <script src={`${basePath}/assets/js/main.min.js`}></script>
         </body>
       </Html>
     );

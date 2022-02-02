@@ -23,7 +23,7 @@ const Index = (props) => {
       <NextSeo title={pageInfo.title} />
       <Header />
       <Modal id={movie} update={update} />
-      <div className="text-center p-20">
+      <div className="p-20 text-center">
         <button
           title="Youtubeを見る"
           onClick={() => {
