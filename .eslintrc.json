@@ -10,8 +10,8 @@
         }
       }
     ],
-    "@next/next/no-sync-scripts": "off" // Scriptを利用しないことによるエラーを回避する場合
-    // "@next/next/no-img-element": "off", // next/image以外の方法でimgを読み込む場合
-    // "tailwindcss/no-custom-classname": "off" // tailwindcssのクラスも利用する場合
+    "@next/next/no-sync-scripts": "off", // Scriptを利用しないことによるエラーを回避する場合
+    "@next/next/no-img-element": "off", // next/image以外の方法でimgを読み込む場合
+    "tailwindcss/no-custom-classname": "off" // tailwindcssのクラスも利用する場合
   }
 }

@@ -2,10 +2,9 @@
 // breakpoint
 // ==========================================================================
 $breakpoints: (
-  "sm": em(480),
   "md": em(767),
-  "lg": em(1024),
-  "xl": em(1366),
+  "lg": em(1023),
+  "xl": em(1365),
 );
 @mixin mq($size: "md") {
   @media screen and (max-width: #{map-get($breakpoints, $size)}) {

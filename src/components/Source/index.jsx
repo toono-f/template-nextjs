@@ -1,8 +1,8 @@
 const breakpoint = {
   sm: 480,
-  md: 768,
-  lg: 1024,
-  xl: 1366,
+  md: 767,
+  lg: 1023,
+  xl: 1365,
 };
 
 const point = (value) => {
@@ -31,7 +31,6 @@ export const Source = (props) => {
 
 // 画像を最適化しない場合
 // import { basePath } from "src/hooks/basePath";
-// const path = basePath();
 // export const Source = (props) => {
-//   return <source srcSet={`${path}/${props.srcset}`} media={point(props.media)} type={webp(props.srcset)} />;
+//   return <source srcSet={`${basePath}${props.srcset}`} media={point(props.media)} type={webp(props.srcset)} />;
 // };

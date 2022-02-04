@@ -16,21 +16,13 @@ module.exports = {
   theme: {
     spacing: object(200),
     colors: {
-      default: "#222222",
+      default: "#1a1a1a",
       white: "#ffffff",
       black: "#000000",
-      // red: "#f32424",
-      // blue: "#1fb6ff",
-      // purple: "#7e5bef",
-      // pink: "#ff49db",
-      // orange: "#ff7849",
-      // green: "#13ce66",
-      // yellow: "#ffc82c",
-      // gray: "#8492a6",
     },
     fontFamily: {
       sans: ["Noto Sans JP", "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "MS Pゴシック", "MS PGothic", "sans-serif"],
-      serif: ["Noto Serif JP", "游明朝体", "Yu Mincho", "YuMincho", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", "serif"],
+      serif: ["Lato", "Noto Sans JP", "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "MS Pゴシック", "MS PGothic", "sans-serif"],
     },
     fontSize: object(80),
     lineHeight: {
@@ -43,10 +35,9 @@ module.exports = {
     },
     extend: {
       screens: {
-        xl: { raw: `all and (max-width: ${em(1920)})` },
-        lg: { raw: `all and (max-width: ${em(1440)})` },
-        md: { raw: `only screen and (max-width: ${em(896)})` },
-        sm: { raw: `only screen and (max-width: ${em(480)})` },
+        lg: { raw: `all and (max-width: ${em(1365)})` },
+        md: { raw: `only screen and (max-width: ${em(1023)})` },
+        sm: { raw: `only screen and (max-width: ${em(767)})` },
         print: { raw: "print" },
       },
     },
