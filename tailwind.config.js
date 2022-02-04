@@ -35,9 +35,9 @@ module.exports = {
     },
     extend: {
       screens: {
-        lg: { raw: `all and (max-width: ${em(1365)})` },
-        md: { raw: `only screen and (max-width: ${em(1023)})` },
-        sm: { raw: `only screen and (max-width: ${em(767)})` },
+        xl: { raw: `all and (max-width: ${em(1365)})` },
+        lg: { raw: `only screen and (max-width: ${em(1023)})` },
+        md: { raw: `only screen and (max-width: ${em(767)})` },
         print: { raw: "print" },
       },
     },
