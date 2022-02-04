@@ -13,9 +13,9 @@
 @import "components/others";
 
 // pages
-// @import "pages/header";
-// @import "pages/footer";
-// @import "pages/page"; // ページ共通
+@import "pages/header";
+@import "pages/footer";
+@import "pages/page"; // ページ共通
 
 // utilities
 @import "tailwindcss/utilities";
