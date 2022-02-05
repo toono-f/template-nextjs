@@ -19,7 +19,7 @@
   // スクロールアニメーション
   .scroll-hidden {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(rem(20));
     @include print {
       opacity: 1;
       transform: translateY(0);

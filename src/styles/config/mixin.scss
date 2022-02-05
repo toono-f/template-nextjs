@@ -1,3 +1,4 @@
+@use "sass:math";
 // ==========================================================================
 // breakpoint
 // ==========================================================================
@@ -18,7 +19,7 @@ $breakpoints: (
 }
 @mixin hover {
   &:hover {
-    @media screen and (min-width: em(896 + 1)) and (hover: hover) {
+    @media screen and (min-width: em(767 + 1)) and (hover: hover) {
       @content;
     }
   }
@@ -27,7 +28,7 @@ $breakpoints: (
 // hover
 // ==========================================================================
 @mixin hover-opacity {
-  @media screen and (min-width: em(896 + 1)) and (hover: hover) {
+  @media screen and (min-width: em(767 + 1)) and (hover: hover) {
     cursor: pointer;
     transition: opacity 0.5s;
   }
@@ -154,4 +155,10 @@ $breakpoints: (
   right: $r;
   left: $l;
   transform: translateY(-50%);
+}
+// ==========================================================================
+// letter-spacing
+// ==========================================================================
+@mixin letter($fs, $ls) {
+  letter-spacing: math.div($ls, $fs) + em;
 }

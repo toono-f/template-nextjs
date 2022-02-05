@@ -18,6 +18,7 @@
     position: relative;
     z-index: 2;
     display: block;
+    min-width: 0;
   }
   > span {
     overflow: hidden;
@@ -53,6 +54,17 @@
     }
     span > span {
       animation: MoveRightInitial 0.1s forwards, MoveRightEnd 0.3s forwards 0.2s;
+    }
+  }
+}
+
+.list-01 {
+  li {
+    @include flex($ai: baseline);
+    min-width: 0;
+    &:before {
+      flex-shrink: 0;
+      content: "・";
     }
   }
 }
