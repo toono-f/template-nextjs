@@ -19,7 +19,8 @@
     "export-gulp": "yarn export && NODE_ENV=production gulp",
     "export-gulp-dev": "yarn export-dev && NODE_ENV=development gulp",
     "export-gulp-all": "yarn export-gulp && yarn export-gulp-dev",
-    "tailwind-config-viewer": "tailwind-config-viewer -o"
+    "tailwind-config-viewer": "tailwind-config-viewer -o",
+    "rem": "yarn gulp remConversion"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
