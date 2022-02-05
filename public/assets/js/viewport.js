@@ -6,6 +6,6 @@
       viewport.setAttribute("content", value);
     }
   }
-  window.addEventListener("load", switchViewport);
+  switchViewport();
   window.addEventListener("resize", switchViewport);
 })();
