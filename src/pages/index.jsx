@@ -11,7 +11,7 @@ const Index = (props) => {
   };
 
   // youtubeの再生
-  const [movie, setMovie] = useState(0);
+  const [movie, setMovie] = useState(null);
   const [update, setUpdate] = useState(false);
   const movieUpdate = (e) => {
     setMovie(e);
@@ -26,11 +26,14 @@ const Index = (props) => {
       <div className="p-20 text-center">
         <button
           title="Youtubeを見る"
+          className="btn-01 w-200"
           onClick={() => {
             movieUpdate("j1hft9Wjq9U");
           }}
         >
-          <span>Youtubeを見る</span>
+          <span>
+            <span>Youtubeを見る</span>
+          </span>
         </button>
       </div>
       <Footer />

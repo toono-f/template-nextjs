@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import classes from "src/components/Modal/Modal.module.scss";
-
 export const Modal = (props) => {
   // youtubeの再生
-  const [movie, setMovie] = useState(0);
+  const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     setMovie(props.id);
@@ -26,22 +25,22 @@ export const Modal = (props) => {
     const optsText = Object.keys(opts)
       .map((key) => `&${key}=${opts[key]}`)
       .join("&");
-    return id !== 0 ? `https://www.youtube.com/embed/${id}?playlist=${id}${optsText}` : null;
+    return id !== null ? `https://www.youtube.com/embed/${id}?playlist=${id}${optsText}` : null;
   };
 
   // 領域外クリック
   const closeModal = (e) => {
     if (!e.target.closest(".js-modal-box")) {
-      setMovie(0);
+      setMovie(null);
     }
   };
 
-  return (
-    <div onClick={closeModal} className={`${classes.modal} ${movie !== 0 ? classes.is_visible : classes.is_hidden}`}>
-      <div className={`js-modal-box ${classes.modal_box} ${movie !== 0 ? classes.is_visible : classes.is_hidden}`}>
+  return movie !== null ? (
+    <div onClick={closeModal} className={`${classes.modal}`}>
+      <div className={`js-modal-box ${classes.modal_box}`}>
         <button
           onClick={() => {
-            setMovie(0);
+            setMovie(null);
           }}
           title="閉じる"
           className={classes.modal_close}
@@ -58,5 +57,5 @@ export const Modal = (props) => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };

@@ -13,6 +13,17 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -23,7 +34,7 @@
   visibility: hidden;
   background-color: rgba(#000, 0.5);
   opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
+  animation: fadeIn 0.3s forwards;
 }
 
 .modal_box {
@@ -34,10 +45,10 @@
   visibility: hidden;
   background-color: #fff;
   opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
+  animation: fadeIn 0.3s forwards;
   transform: translate(-50%, -50%);
-  @include mq(md) {
-    width: calc(100% - #{sp(15 * 2)});
+  @include mq {
+    width: calc(100% - #{rem(15 * 2)});
     max-width: 100%;
   }
 }
@@ -52,9 +63,9 @@
   transform: translate(50%, -100%);
   @include flex($jc: center, $ai: center);
   @include hover-opacity;
-  @include mq(md) {
-    width: sp(30);
-    height: sp(30);
+  @include mq {
+    width: rem(30);
+    height: rem(30);
   }
   &:before,
   &:after {
@@ -64,8 +75,8 @@
     top: 50%;
     left: 50%;
     background-color: #fff;
-    @include mq(md) {
-      @include size-sp(1, 20);
+    @include mq {
+      @include size-rem(1, 20);
     }
   }
   &:before {
@@ -82,7 +93,7 @@
   padding-top: calc(315 / 560 * 100%);
   overflow: hidden;
   background-color: #000;
-  @include mq(md) {
+  @include mq {
     width: 100%;
   }
   iframe {
@@ -106,16 +117,8 @@
     animation: rotate 0.75s 0s linear infinite;
     animation-fill-mode: both;
     @include size-rem(50);
-    @include mq(lg) {
-      @include size-tb(50);
-    }
-    @include mq(md) {
-      @include size-sp(30);
+    @include mq {
+      @include size-rem(30);
     }
   }
-}
-
-.is_visible {
-  visibility: visible;
-  opacity: 1;
 }
