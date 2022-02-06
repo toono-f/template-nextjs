@@ -35,11 +35,16 @@ const MyApp = ({ Component }) => {
         }}
       />
       <Head>
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        {/* <script src={`${basePath}assets/js/viewport.js`}></script> */}
         {/* <link rel="shortcut icon" href="" /> */}
         {/* <link rel="apple-touch-icon" href="" /> */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        {/* next export時にに以下有効 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `var viewport=document.querySelector('meta[name="viewport"]');function switchViewport(){var value=window.outerWidth>375?"width=device-width,initial-scale=1.0":"width=375";if(viewport.getAttribute("content")!==value){viewport.setAttribute("content",value)}} switchViewport();window.addEventListener("resize",switchViewport);`,
+          }}
+        />
       </Head>
       <Layout>
         <Component />

@@ -13,8 +13,8 @@
     -moz-osx-font-smoothing: grayscale;
     @include mq {
       // テキスト自動拡大アルゴリズムを無効化
-      -webkit-text-size-adjust: none;
-      text-size-adjust: none;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
     @include print {
       zoom: 0.5;

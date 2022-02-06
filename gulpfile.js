@@ -9,6 +9,9 @@ const htmlReplace = () => {
     .src([`./${path}/**/*.html`])
     .pipe(replace(/(?<=\/_next\/static\/css\/).*?(?=\.css)/g, "main")) // next export時のcssのファイル名を置換
     .pipe(replace(/_next\/static\/css\//g, "assets/css/")) // next export時のcssのパス名を置換
+    .pipe(replace(/<style><\/style>/g, "")) // 空のstyleタグを削除
+    .pipe(replace(/ data-n-g=""\/><noscript data-n-css=""><\/noscript>/g, "/>")) // 不要記述を削除
+    .pipe(replace(/<meta name="next-head-count" content=".*?"\/>/g, "")) // 不要記述を削除
     .pipe(gulp.dest(`./${path}/`));
 };
 

@@ -6,13 +6,13 @@
   }
   // SPのみ表示/非表示
   .sp-hidden {
-    @include mq(md) {
+    @include mq {
       display: none;
     }
   }
   .sp-block {
     display: none;
-    @include mq(md) {
+    @include mq {
       display: block;
     }
   }
