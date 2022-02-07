@@ -46,5 +46,6 @@ module.exports = {
     require("./plugins/tailwind-vw-calc.js")({
       extend: {},
     }),
+    require("./plugins/tailwind-animation-delay.js"),
   ],
 };

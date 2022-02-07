@@ -1,0 +1,22 @@
+.cursor_mouse {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  // mix-blend-mode: exclusion;
+  @include mq {
+    display: none;
+  }
+  @include print {
+    display: none;
+  }
+  circle {
+    fill: rgba(#717071, 0.8);
+    // stroke: rgba(#c2c3c3, 0.5);
+    // stroke-width: rem(1);
+  }
+}

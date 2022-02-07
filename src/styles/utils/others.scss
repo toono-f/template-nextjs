@@ -1,37 +1,102 @@
-@layer utilities {
-  // リンクオフ
-  .link-off {
-    pointer-events: none;
-    opacity: 0.7;
-  }
-  // SPのみ表示/非表示
-  .sp-hidden {
-    @include mq {
-      display: none;
-    }
-  }
-  .sp-block {
+// リンクオフ
+.link-off {
+  pointer-events: none;
+  opacity: 0.7;
+}
+// SPのみ表示/非表示
+.sp-hidden {
+  @include mq {
     display: none;
-    @include mq {
-      display: block;
-    }
   }
-  // スクロールアニメーション
-  .scroll-hidden {
-    opacity: 0;
-    transform: translateY(rem(20));
-    @include print {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+.sp-block {
+  display: none;
+  @include mq {
+    display: block;
   }
-  .scroll-up {
+}
+// ホバーアニメーション
+.hover-opacity {
+  @include hover-opacity;
+}
+
+// スクロールアニメーション
+.scroll-in {
+  visibility: hidden;
+  opacity: 0;
+  @include print {
+    visibility: visible;
     opacity: 1;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+
+.scroll-zoom {
+  overflow: hidden;
+  opacity: 0;
+  @include print {
+    opacity: 1;
+  }
+  img {
+    transform: scale(1.3);
+    @include print {
+      transform: scale(1);
+    }
+  }
+  &.is-active {
+    opacity: 1;
+    transition: opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    img {
+      transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transform: scale(1);
+    }
+  }
+}
+
+.scroll-up {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(rem(30));
+  @include print {
+    visibility: visible;
+    opacity: 1;
     transform: translateY(0);
   }
-  // ホバーアニメーション
-  .hover-opacity {
-    @include hover-opacity;
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateY(0);
+  }
+}
+
+.scroll-up-text {
+  opacity: 0;
+  transform: translateY(rem(30));
+  @include print {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &.is-active {
+    opacity: 1;
+    transition: transform 2s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 2s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translateY(0);
+  }
+}
+
+.scroll-up-matrix {
+  display: inline-block;
+  overflow: hidden;
+  transform: translateY(100%);
+  @include print {
+    transform: translateY(0);
+    animation: none;
+  }
+  &.is-active {
+    animation: textUp 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
 }

@@ -1,4 +1,4 @@
-.btn-01 {
+.btn-nl {
   position: relative;
   width: 100%;
   padding: rem(33) rem(8);
@@ -14,14 +14,28 @@
   @include mq {
     padding: rem(23) rem(8);
   }
-  span {
+  &_in,
+  &_text {
     position: relative;
     z-index: 2;
     display: block;
     min-width: 0;
+    white-space: nowrap;
   }
-  > span {
+  &_in {
     overflow: hidden;
+  }
+  &_text {
+    height: rem(15);
+  }
+  .text-show,
+  .text-hidden {
+    display: block;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center left;
+  }
+  .text-hidden {
+    transform: translate(0) rotate(15deg);
   }
   &:before,
   &:after {
@@ -52,13 +66,16 @@
       transition: transform 0.01s 0.3s cubic-bezier(0.7, 0, 0.2, 1);
       transform: translate3d(0, 0, 0);
     }
-    span > span {
-      animation: MoveRightInitial 0.1s forwards, MoveRightEnd 0.3s forwards 0.2s;
+    .text-show {
+      transform: translateY(-100%) rotate(-15deg);
+    }
+    .text-hidden {
+      transform: translateY(-100%);
     }
   }
 }
 
-.list-01 {
+.list-nl {
   li {
     @include flex($ai: baseline);
     min-width: 0;

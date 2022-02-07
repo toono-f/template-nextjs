@@ -20,9 +20,12 @@ export default function Custom404() {
           現在利用できない可能性があります。
         </p>
         <p className="mt-40 mb-100 text-center">
-          <a className="w-200 font-serif btn-01" href={`${basePath}`}>
-            <span>
-              <span>TOPに戻る</span>
+          <a className="w-200 font-serif btn-nl" href={`${basePath}`}>
+            <span className="btn-nl_in">
+              <span className="btn-nl_text">
+                <span className="text-show">TOPに戻る</span>
+                <span className="text-hidden">TOPに戻る</span>
+              </span>
             </span>
           </a>
         </p>

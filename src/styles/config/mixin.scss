@@ -162,3 +162,29 @@ $breakpoints: (
 @mixin letter($fs, $ls) {
   letter-spacing: math.div($ls, $fs) + em;
 }
+// ==========================================================================
+// hover text animation
+// ==========================================================================
+@mixin text-rotate($h, $d: inline-block) {
+  display: $d;
+  height: $h;
+  overflow: hidden;
+  white-space: nowrap;
+  .text-show,
+  .text-hidden {
+    display: block;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center left;
+  }
+  .text-hidden {
+    transform: translate(0) rotate(15deg);
+  }
+  @include hover {
+    .text-show {
+      transform: translateY(-100%) rotate(-15deg);
+    }
+    .text-hidden {
+      transform: translateY(-100%);
+    }
+  }
+}
