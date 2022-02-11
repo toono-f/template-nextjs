@@ -1,0 +1,10 @@
+.list-nl {
+  li {
+    @include flex($ai: baseline);
+    min-width: 0;
+    &:before {
+      flex-shrink: 0;
+      content: "・";
+    }
+  }
+}

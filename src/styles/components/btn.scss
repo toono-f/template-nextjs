@@ -1,7 +1,7 @@
 .btn-nl {
   position: relative;
   width: 100%;
-  padding: rem(33) rem(8);
+  padding: rem(33) rem(12);
   overflow: hidden;
   font-size: rem(12);
   font-weight: bold;
@@ -12,7 +12,36 @@
     max-width: rem(375);
   }
   @include mq {
-    padding: rem(23) rem(8);
+    padding: rem(23) rem(12);
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: #000;
+  }
+  &:before {
+    width: 135%;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
+    transform: translate3d(-100%, 0, 0);
+  }
+  &:after {
+    width: 105%;
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+    transform: translate3d(100%, 0, 0);
+  }
+  &--sm {
+    max-width: rem(255 - 80);
+  }
+  &--md {
+    max-width: rem(255);
+  }
+  &--lg {
+    max-width: rem(255 + 80);
   }
   &_in,
   &_text {
@@ -37,26 +66,6 @@
   .text-hidden {
     transform: translate(0) rotate(15deg);
   }
-  &:before,
-  &:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background: #000;
-  }
-  &:before {
-    width: 135%;
-    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
-    transform: translate3d(-100%, 0, 0);
-  }
-  &:after {
-    width: 105%;
-    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-    transform: translate3d(100%, 0, 0);
-  }
   @include hover {
     &:before {
       transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
@@ -71,17 +80,6 @@
     }
     .text-hidden {
       transform: translateY(-100%);
-    }
-  }
-}
-
-.list-nl {
-  li {
-    @include flex($ai: baseline);
-    min-width: 0;
-    &:before {
-      flex-shrink: 0;
-      content: "・";
     }
   }
 }

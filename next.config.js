@@ -42,6 +42,7 @@ module.exports = withPlugins(
     [
       optimizedImages,
       {
+        // imagesName: "[name].[ext]",
         optimizeImages: true,
         optimizeImagesInDev: false,
         removeOriginalExtension: true,

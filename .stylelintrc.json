@@ -13,6 +13,12 @@
       {
         "ignoreAtRules": ["layer"]
       }
+    ],
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      {
+        "ignoreFontFamilies": "Material Icons Outlined"
+      }
     ]
   }
 }
