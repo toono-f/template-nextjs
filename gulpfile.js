@@ -1,8 +1,18 @@
 const gulp = require("gulp");
-const replace = require("gulp-replace");
 const rename = require("gulp-rename");
+const replace = require("gulp-replace");
+require("dotenv").config();
 
-const path = process.env.NODE_ENV == "production" ? "out" : "out_dev";
+const env = process.env;
+const path = env.NODE_ENV == "production" ? "out" : "out_dev";
+const directory = env.NODE_ENV == "production" ? env.NEXT_PUBLIC_API_ORIGIN : env.NEXT_PUBLIC_API_ORIGIN_DEV;
+
+const bgUrlReplace = () => {
+  return gulp
+    .src([`./${path}/_next/static/css/*.css`])
+    .pipe(replace(/background-image:url\(\//g, `background-image:url(${directory}/`))
+    .pipe(gulp.dest(`./${path}/_next/static/css/`));
+};
 
 const htmlReplace = () => {
   return gulp
@@ -22,7 +32,7 @@ const cssRename = () => {
     .pipe(gulp.dest(`./${path}/assets/css/`));
 };
 
-gulp.task("default", gulp.series(gulp.parallel(htmlReplace, cssRename)));
+gulp.task("default", gulp.series(bgUrlReplace, gulp.parallel(htmlReplace, cssRename)));
 
 const remConversion = () => {
   return gulp

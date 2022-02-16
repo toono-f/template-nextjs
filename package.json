@@ -56,6 +56,7 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
     "cssnano": "^5.0.14",
+    "dotenv": "^16.0.0",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
     "eslint-config-prettier": "^8.3.0",
