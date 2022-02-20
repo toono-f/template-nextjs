@@ -4,12 +4,12 @@ import { Footer } from "src/components/Footer";
 import { Header } from "src/components/Header";
 import { Modal } from "src/components/Modal";
 
-const Index = (props) => {
-  // meta
-  const pageInfo = {
-    title: "TOP",
-  };
+// meta
+const pageInfo = {
+  title: "TOP",
+};
 
+const Index = (props) => {
   // youtubeの再生
   const [movie, setMovie] = useState(null);
   const [update, setUpdate] = useState(false);
@@ -24,20 +24,38 @@ const Index = (props) => {
       <Header />
       <Modal id={movie} update={update} />
       <div className="p-20 text-center">
-        <button
-          title="Youtubeを見る"
-          className="w-200 btn-nl"
-          onClick={() => {
-            movieUpdate("j1hft9Wjq9U");
-          }}
-        >
-          <span className="btn-nl_in">
-            <span className="btn-nl_text">
-              <span className="text-show">Youtubeを見る</span>
-              <span className="text-hidden">Youtubeを見る</span>
+        <p>
+          <button
+            title="Youtubeを見る"
+            className="w-200 btn-nl"
+            onClick={() => {
+              movieUpdate("j1hft9Wjq9U");
+            }}
+          >
+            <span className="btn-nl_in">
+              <span className="btn-nl_text">
+                <span className="text-show">Youtubeを見る</span>
+                <span className="text-hidden">Youtubeを見る</span>
+              </span>
             </span>
-          </span>
-        </button>
+          </button>
+        </p>
+        <p className="mt-30">
+          <button
+            title="Youtubeを見る"
+            className="w-200 btn-nl"
+            onClick={() => {
+              movieUpdate("yXZd7xVdpJ0");
+            }}
+          >
+            <span className="btn-nl_in">
+              <span className="btn-nl_text">
+                <span className="text-show">Youtubeを見る</span>
+                <span className="text-hidden">Youtubeを見る</span>
+              </span>
+            </span>
+          </button>
+        </p>
       </div>
       <Footer />
     </>

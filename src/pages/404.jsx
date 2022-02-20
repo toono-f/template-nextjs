@@ -3,11 +3,12 @@ import { Footer } from "src/components/Footer";
 import { Header } from "src/components/Header";
 import { basePath } from "src/hooks/basePath";
 
+// meta
+const pageInfo = {
+  title: "404",
+};
+
 export default function Custom404() {
-  // meta
-  const pageInfo = {
-    title: "404",
-  };
   return (
     <>
       <NextSeo title={pageInfo.title} />
