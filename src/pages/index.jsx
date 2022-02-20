@@ -26,7 +26,7 @@ const Index = (props) => {
       <div className="p-20 text-center">
         <button
           title="Youtubeを見る"
-          className="btn-nl w-200"
+          className="w-200 btn-nl"
           onClick={() => {
             movieUpdate("j1hft9Wjq9U");
           }}
